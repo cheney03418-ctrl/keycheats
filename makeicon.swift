@@ -15,11 +15,9 @@ let rect = CGRect(x: inset, y: inset, width: S - inset * 2, height: S - inset * 
 let path = NSBezierPath(roundedRect: rect, xRadius: 185, yRadius: 185)
 
 path.addClip()
-let grad = NSGradient(colors: [
-    NSColor(srgbRed: 0.36, green: 0.36, blue: 0.98, alpha: 1),
-    NSColor(srgbRed: 0.62, green: 0.28, blue: 0.92, alpha: 1),
-])!
-grad.draw(in: rect, angle: -70)
+// 纯色填充：视觉更干净，PNG 也压得动（渐变会让 icns 涨到 700KB）
+NSColor(srgbRed: 0.404, green: 0.353, blue: 0.910, alpha: 1).setFill()
+rect.fill()
 
 // 内侧高光
 let top = NSBezierPath(roundedRect: rect.insetBy(dx: 6, dy: 6), xRadius: 179, yRadius: 179)

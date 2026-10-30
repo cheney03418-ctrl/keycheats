@@ -2,7 +2,7 @@
 
 <img src="docs/icon.png" width="96" align="right" alt="KeyCheats icon">
 
-**A 200 KB native macOS menu-bar app that answers one question: "what was that shortcut again?"**
+**A 456 KB native macOS menu-bar app that answers one question: "what was that shortcut again?"**
 
 Lives in your menu bar, opens with `⌥⌘K`, searchable in Chinese / pinyin / English key names, click any row to copy the key combo. No Dock icon, no accessibility permission, no telemetry, no dependencies.
 
@@ -27,7 +27,7 @@ KeyCheats takes the opposite bet: **a small, curated, always-available cheat she
 | System-level shortcuts | ✅ 86 entries | ⚠️ only frontmost app | ⚠️ only frontmost app |
 | Chinese / pinyin search | ✅ | ❌ | ❌ |
 | Click to copy key combo | ✅ | ❌ | ❌ |
-| Footprint | 200 KB, ~60 MB RAM | larger | similar |
+| Footprint | 456 KB, ~60 MB RAM | larger | similar |
 | Price | free, MIT | free / €19.99 | free |
 
 ## Features
@@ -98,7 +98,7 @@ MIT — see [LICENSE](LICENSE).
 
 # 中文
 
-**200 KB 的原生 macOS 菜单栏小工具，只回答一个问题：那个快捷键是啥来着？**
+**456 KB 的原生 macOS 菜单栏小工具，只回答一个问题：那个快捷键是啥来着？**
 
 常驻菜单栏，`⌥⌘K` 唤起，中文 / 拼音 / 英文键名都能搜，点一下就复制键位。没有 Dock 图标、不要辅助功能授权、不联网、无第三方依赖。
 
@@ -120,7 +120,7 @@ KeyCheats 反过来做：**一份精选的、随时可查的系统级快捷键�
 | 系统级快捷键 | ✅ 86 条 | ⚠️ 仅当前 App | ⚠️ 仅当前 App |
 | 中文 / 拼音搜索 | ✅ | ❌ | ❌ |
 | 点击复制键位 | ✅ | ❌ | ❌ |
-| 体积 | 200 KB / 约 60 MB 内存 | 更大 | 相近 |
+| 体积 | 456 KB / 约 60 MB 内存 | 更大 | 相近 |
 | 价格 | 免费 MIT | 免费 / €19.99 | 免费 |
 
 ## 功能
