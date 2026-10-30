@@ -2,3 +2,5 @@ build/
 .DS_Store
 *.xcodeproj
 xcuserdata/
+# 发布用的封面生成脚本，与 App 无关
+makecover.swift
