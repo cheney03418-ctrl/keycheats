@@ -851,10 +851,27 @@ if let i = CommandLine.arguments.firstIndex(of: "--snapshot"), i + 1 < CommandLi
     rep.size = NSSize(width: 400, height: 520)
     NSGraphicsContext.saveGraphicsState()
     NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: rep)
-    NSColor(white: 0.12, alpha: 1).setFill()
+    NSColor(white: 0.02, alpha: 1).setFill()
     v.bounds.fill()
     v.cacheDisplay(in: v.bounds, to: rep)
     NSGraphicsContext.restoreGraphicsState()
+
+    // 离屏渲染时 NSVisualEffectView 的 material 会退化成不透明中灰（约 0.23）。
+    // 做一次色阶压缩：黑场 0.20、白场 1.0，把灰底压到近黑，文字仍是纯白。
+    if let data = rep.bitmapData {
+        let spp = rep.bitsPerPixel / 8
+        for y in 0..<rep.pixelsHigh {
+            let row = data + y * rep.bytesPerRow
+            for x in 0..<rep.pixelsWide {
+                let px = row + x * spp
+                for c in 0..<3 {
+                    let v = Double(px[c]) / 255.0
+                    px[c] = UInt8(max(0, min(1, (v - 0.20) / 0.80)) * 255)
+                }
+            }
+        }
+    }
+
     try? rep.representation(using: .png, properties: [:])?.write(to: URL(fileURLWithPath: outPath))
     exit(0)
 }
